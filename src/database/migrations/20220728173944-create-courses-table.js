@@ -2,20 +2,47 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+    await queryInterface.createTable('courses', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.DataTypes.INTEGER
+      },
+      name: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
+      },
+      synopsis: {
+        allowNull: false,
+        type: Sequelize.DataTypes.TEXT
+      },
+      thumbnail_url: {
+        type: Sequelize.DataTypes.STRING
+      },
+      featured: {
+        defaultValue: false,
+        type: Sequelize.DataTypes.BOOLEAN
+      },
+      category_id: {
+        allowNull: false,
+        type: Sequelize.DataTypes.INTEGER,
+        references: { model: 'categories', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT'
+      },
+      created_at: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DATE
+      },
+      updated_at: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DATE
+      }
+    })
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('courses')
   }
 };
