@@ -15,7 +15,7 @@ export interface EpisodeCreationAttributes extends Optional<Episode, 'id' | 'vid
 
 export interface EpisodeInstance extends Model<Episode, EpisodeCreationAttributes>, Episode { }
 
-export const Episode = sequelize.define<EpisodeInstance, Episode>('episodes', {
+export const Episode = sequelize.define<EpisodeInstance, Episode>('Episode', {
     id: {
         allowNull: false,
         autoIncrement: true,
