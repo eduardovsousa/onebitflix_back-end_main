@@ -35,7 +35,7 @@ export const coursesController = {
 
         const [page, perPage] = getPaginationParams(req.query)
         try {
-            if(typeof name !== 'string') throw new Error('name param must be of type string')
+            if(typeof name !== 'string') throw new Error('Name param must be of type string.')
             const courses = await courseService.findByName(name, page, perPage)
             return res.json(courses)
         } catch (err) {

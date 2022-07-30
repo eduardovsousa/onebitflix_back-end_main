@@ -8,7 +8,7 @@ export const episodeController = {
 
     try {
       if (typeof videoUrl !== "string")
-        throw new Error("videoUrl param must be of type string");
+        throw new Error("videoUrl param must be of type string.");
 
       const range = req.headers.range;
 
