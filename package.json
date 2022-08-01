@@ -28,6 +28,7 @@
     "express": "^4.17.3",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mv": "^2.1.1",
     "pg": "^8.7.3",
     "sequelize": "^6.13.0",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.45",
     "sequelize-cli": "^6.4.1",
     "ts-node-dev": "^1.1.8",
