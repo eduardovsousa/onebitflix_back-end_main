@@ -1,3 +1,5 @@
+// src/database/migrations/20220728201831-create-users-table.js
+
 'use strict';
 
 module.exports = {
