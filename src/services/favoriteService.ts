@@ -22,12 +22,21 @@ export const favoriteService = {
         }
     },
 
-    create: async(userId: number, courseId: number ) => {
+    create: async( userId: number, courseId: number ) => {
         const favorite = Favorite.create({
             courseId,
             userId
         })
 
         return favorite
+    },
+
+    delete: async( userId: number, courseId: number ) => {
+        await Favorite.destroy({
+            where: {
+                userId,
+                courseId
+            }
+        })
     }
 }
